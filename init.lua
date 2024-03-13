@@ -594,8 +594,6 @@ require('lazy').setup({
         -- tsserver = {},
         --
         gopls = {
-          cmd = { 'gopls' },
-          filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
           root_dir = function(fname)
             -- see: https://github.com/neovim/nvim-lspconfig/issues/804
             if not mod_cache then
