@@ -164,19 +164,6 @@ vim.keymap.set('i', 'jk', '<Esc>')
 
 vim.wo.relativenumber = true
 
--- vim.o.shell = 'powershell.exe'
-
-if vim.fn.executable 'pwsh' then
-  vim.o.shell = 'pwsh'
-else
-  vim.o.shell = 'powershell'
-end
-vim.o.shellcmdflag =
-  "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';"
-vim.o.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
-vim.o.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
-vim.o.shellquote = vim.o.shellxquote
-
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -567,10 +554,6 @@ require('lazy').setup({
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-      local mod_cache = 'C:\\Users\\josep\\go\\pkg\\mod'
-
-      local util = require 'lspconfig.util'
-      local async = require 'lspconfig.async'
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -594,23 +577,14 @@ require('lazy').setup({
         -- tsserver = {},
         --
         gopls = {
-          root_dir = function(fname)
-            -- see: https://github.com/neovim/nvim-lspconfig/issues/804
-            if not mod_cache then
-              local result = async.run_command 'go env GOMODCACHE'
-              if result and result[1] then
-                mod_cache = vim.trim(result[1])
-              end
-            end
-            if fname:sub(1, #mod_cache) == mod_cache then
-              local clients = vim.lsp.get_active_clients { name = 'gopls' }
-              if #clients > 0 then
-                return clients[#clients].config.root_dir
-              end
-            end
-            return util.root_pattern 'go.work'(fname) or util.root_pattern('go.mod', '.git')(fname)
-          end,
-          single_file_support = true,
+          settings = {
+            env = {
+              GOFLAGS = '-tags=test',
+            },
+          },
+        },
+        clangd = {
+          filetypes = { '.c', '.cpp' },
         },
         lua_ls = {
           -- cmd = {...},
