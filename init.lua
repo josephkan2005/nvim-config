@@ -157,7 +157,8 @@ vim.opt.scrolloff = 10
 --  See `:help vim.keymap.set()`
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.keymap.set('i', 'jk', '<Esc>')
@@ -174,6 +175,9 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv 'HOME' .. '/.nvim/undodir'
+vim.opt.undofile = true
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
@@ -218,6 +222,9 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', '<C-j>', ':bnext<CR>', { desc = 'Move to next buffer' })
 vim.keymap.set('n', '<C-k>', ':bprev<CR>', { desc = 'Move to previous buffer' })
 
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -255,6 +262,8 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-fugitive',
+  'mbbill/undotree',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -264,6 +273,8 @@ require('lazy').setup({
   --
   --  This is equivalent to:
   --    require('Comment').setup({})
+
+  -- { 'nvim-tree/nvim-tree.lua', opts = {} },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -285,7 +296,6 @@ require('lazy').setup({
       },
     },
   },
-
   -- NOTE: Plugins can also be configured to run lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -655,6 +665,12 @@ require('lazy').setup({
       },
       formatters_by_ft = {
         lua = { 'stylua' },
+        c = { 'clang_format' },
+        cpp = { 'clang_format' },
+        typescript = { 'prettierd' },
+        tsx = { 'prettierd' },
+        jsx = { 'prettierd' },
+        javascript = { 'prettierd' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
