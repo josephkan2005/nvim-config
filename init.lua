@@ -90,8 +90,6 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.keymap.set('n', '<leader>ev', vim.cmd.Ex)
-
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = false
 
@@ -179,6 +177,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv 'HOME' .. '/.nvim/undodir'
 vim.opt.undofile = true
 
+vim.keymap.set('n', '<leader>ev', vim.cmd.Ex)
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
