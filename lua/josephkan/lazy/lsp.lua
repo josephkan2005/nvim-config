@@ -150,9 +150,9 @@ return { -- LSP Configuration & Plugins
           },
         },
       },
-      clangd = {
-        filetypes = { '.c', '.cpp' },
-      },
+      --clangd = {
+      --  filetypes = { '.c', '.cpp' },
+      --},
       lua_ls = {
         -- cmd = {...},
         -- filetypes { ...},
@@ -178,6 +178,12 @@ return { -- LSP Configuration & Plugins
             -- diagnostics = { disable = { 'missing-fields' } },
           },
         },
+      },
+    }
+
+    require('typescript-tools').setup {
+      settings = {
+        expose_as_code_action = { 'all' },
       },
     }
 
