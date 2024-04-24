@@ -12,7 +12,7 @@ return {
     npairs.setup {
       fast_wrap = {
         map = '<M-e>',
-        chars = { '{', '[', '(', '"', "'" },
+        chars = { '{', '[', '(', '"', "'", '`' },
         pattern = [=[[%'%"%>%]%)%}%,]]=],
         end_key = '$',
         before_key = 'h',
@@ -26,7 +26,7 @@ return {
     }
   end,
   opts = {
-    ignored_next_char = '[^;:.,=}%])>` %n%t]',
+    --ignored_next_char = '[^;:.,=}%])>` %n%t]',
     --enable_check_bracket_line = false,
   },
   -- use opts = {} for passing setup options
