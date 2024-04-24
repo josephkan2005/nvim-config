@@ -25,12 +25,17 @@ return {
         :find()
     end
 
-    vim.keymap.set('n', '<leader>a', function()
+    vim.keymap.set('n', '<leader>ha', function()
       harpoon:list():add()
-    end, { desc = 'Add to harpoon' })
-    vim.keymap.set('n', '<leader>ew', function()
+    end, { desc = 'Add to Harpoon' })
+
+    vim.keymap.set('n', '<leader>hd', function()
+      harpoon:list():remove()
+    end, { desc = 'Remove from Harpoon' })
+
+    vim.keymap.set('n', '<leader>hw', function()
       toggle_telescope(harpoon:list())
-    end, { desc = 'Open harpoon window' })
+    end, { desc = 'Open Harpoon window' })
 
     vim.keymap.set('n', '<leader>hl', function()
       harpoon:list():select(1)
