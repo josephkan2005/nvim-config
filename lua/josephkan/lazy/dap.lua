@@ -78,7 +78,7 @@ return {
     { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
     { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
   },
-  --[[ config = function()
+  config = function()
     local dap = require 'dap'
     dap.adapters.gdb = {
       type = 'executable',
@@ -97,5 +97,7 @@ return {
         stopAtBeginningOfMainSubprogram = false,
       },
     }
-  end, ]]
+    dap.configurations.cpp = dap.configurations.c
+    dap.configurations.rust = dap.configurations.c
+  end,
 }
