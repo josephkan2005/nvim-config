@@ -111,6 +111,11 @@ return { -- LSP Configuration & Plugins
             callback = vim.lsp.buf.clear_references,
           })
         end
+        if client.name == 'typescript-tools' then
+          local ns = vim.lsp.diagnostic.get_namespace(client.id)
+
+          vim.diagnostic.disable(nil, ns)
+        end
       end,
     })
 
@@ -143,6 +148,15 @@ return { -- LSP Configuration & Plugins
       -- But for many setups, the LSP (`tsserver`) will work just fine
       -- tsserver = {},
       --
+      --[[ eslint = {
+        settings = {
+          workingDirectory = {
+            mode = 'auto',
+          },
+          format = { enable = true },
+          lint = { enable = true },
+        },
+      }, ]]
       gopls = {
         settings = {
           env = {
