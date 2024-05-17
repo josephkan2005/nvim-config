@@ -9,6 +9,12 @@ return { -- LSP Configuration & Plugins
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
+    {
+      'folke/neodev.nvim',
+      opts = {
+        library = { plugins = { 'nvim-dap', 'nvim-dap-ui' }, types = true },
+      },
+    },
   },
   config = function()
     -- Brief Aside: **What is LSP?**

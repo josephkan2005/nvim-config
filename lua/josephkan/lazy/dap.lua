@@ -134,5 +134,30 @@ return {
     }
     dap.configurations.cpp = dap.configurations.c
     dap.configurations.rust = dap.configurations.c
+
+    dap.adapters['chrome'] = {
+      name = 'chrome',
+      command = 'node',
+      type = 'executable',
+      args = { os.getenv 'HOME' .. '/.local/share/nvim/mason/bin/chrome-debug-adapter --remote-debugging-port=9222' }, -- TODO adjust
+    }
+
+    dap.configurations.javascript = { -- change this to javascript if needed
+      {
+        name = 'Run Chrome debugger',
+        type = 'chrome',
+        request = 'attach',
+        program = '${file}',
+        cwd = vim.fn.getcwd(),
+        sourceMaps = true,
+        protocol = 'inspector',
+        port = 8080,
+        webRoot = '${workspaceFolder}',
+      },
+    }
+
+    dap.configurations.typescript = dap.configurations.javascript
+    dap.configurations.javascriptreact = dap.configurations.javascript
+    dap.configurations.typescriptreact = dap.configurations.javascript
   end,
 }
