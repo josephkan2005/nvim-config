@@ -204,6 +204,9 @@ return { -- LSP Configuration & Plugins
     require('typescript-tools').setup {
       settings = {
         expose_as_code_action = { 'all' },
+        implicitProjectConfiguration = {
+          checkJs = true,
+        },
       },
     }
 
