@@ -24,5 +24,5 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
-vim.keymap.set('n', '<C-j>', ':bnext<CR>', { desc = 'Move to next buffer' })
-vim.keymap.set('n', '<C-k>', ':bprev<CR>', { desc = 'Move to previous buffer' })
+-- vim.keymap.set('n', '<C-j>', ':bnext<CR>', { desc = 'Move to next buffer' })
+-- vim.keymap.set('n', '<C-k>', ':bprev<CR>', { desc = 'Move to previous buffer' })
