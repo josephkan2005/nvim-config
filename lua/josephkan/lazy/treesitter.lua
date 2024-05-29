@@ -11,7 +11,7 @@ return { -- Highlight, edit, and navigate code
       auto_install = true,
       highlight = { enable = true },
       autotag = { enable = true },
-      --indent = { enable = true },
+      indent = { enable = true },
     }
 
     require('nvim-treesitter.install').compilers = { 'clang' }

@@ -120,7 +120,7 @@ return { -- LSP Configuration & Plugins
         if client.name == 'typescript-tools' then
           local ns = vim.lsp.diagnostic.get_namespace(client.id)
 
-          vim.diagnostic.disable(nil, ns)
+          -- vim.diagnostic.disable(nil, ns)
         end
       end,
     })
