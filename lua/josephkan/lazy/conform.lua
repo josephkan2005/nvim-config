@@ -14,6 +14,7 @@ return { -- Autoformat
       tsx = { 'prettierd' },
       jsx = { 'prettierd' },
       javascript = { 'prettierd' },
+      json = { 'prettierd' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
