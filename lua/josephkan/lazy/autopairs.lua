@@ -34,10 +34,7 @@ return {
         :with_cr(cond.done()),
     }
   end,
-  opts = {
-    --ignored_next_char = '[^;:.,=}%])>` %n%t]',
-    --enable_check_bracket_line = false,
-  },
+  opts = {},
   -- use opts = {} for passing setup options
   -- this is equalent to setup({}) function
 }
