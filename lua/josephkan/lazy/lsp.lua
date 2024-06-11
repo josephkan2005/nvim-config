@@ -170,9 +170,9 @@ return { -- LSP Configuration & Plugins
           },
         },
       },
-      --clangd = {
-      --  filetypes = { '.c', '.cpp' },
-      --},
+      clangd = {
+        filetypes = { 'c', 'cpp' },
+      },
       lua_ls = {
         -- cmd = {...},
         -- filetypes { ...},
