@@ -22,6 +22,3 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>er', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-
--- vim.keymap.set('n', '<C-j>', ':bnext<CR>', { desc = 'Move to next buffer' })
--- vim.keymap.set('n', '<C-k>', ':bprev<CR>', { desc = 'Move to previous buffer' })
