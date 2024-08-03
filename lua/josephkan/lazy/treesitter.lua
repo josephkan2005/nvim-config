@@ -14,7 +14,6 @@ return { -- Highlight, edit, and navigate code
         disable = { 'latex' },
         additional_vim_regex_highlighting = { 'latex' },
       },
-      autotag = { enable = true },
       indent = { enable = true },
     }
 
