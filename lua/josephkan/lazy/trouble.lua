@@ -12,8 +12,8 @@ return {
     },
     {
       '<leader>tE',
-      '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
-      desc = 'Buffer Diagnostics (Trouble)',
+      '<cmd>Trouble diagnostics toggle filter={severity=vim.diagnostic.severity.ERROR}<cr>',
+      desc = 'Buffer Diagnostics Trouble',
     },
     {
       '<leader>ts',
