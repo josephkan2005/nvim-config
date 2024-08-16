@@ -7,12 +7,12 @@ return {
   keys = {
     {
       '<leader>te',
-      '<cmd>Trouble diagnostics toggle<cr>',
+      '<cmd>Trouble diagnostics toggle focus=true<cr>',
       desc = 'Diagnostics (Trouble)',
     },
     {
       '<leader>tE',
-      '<cmd>Trouble diagnostics toggle filter={severity=vim.diagnostic.severity.ERROR}<cr>',
+      '<cmd>Trouble diagnostics toggle focus=true filter={severity=vim.diagnostic.severity.ERROR}<cr>',
       desc = 'Buffer Diagnostics Trouble',
     },
     {
