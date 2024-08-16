@@ -17,22 +17,22 @@ return {
     },
     {
       '<leader>ts',
-      '<cmd>Trouble symbols toggle focus=false<cr>',
+      '<cmd>Trouble symbols toggle focus=true<cr>',
       desc = 'Symbols (Trouble)',
     },
     {
       '<leader>ti',
-      '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
+      '<cmd>Trouble lsp toggle focus=true win.position=right<cr>',
       desc = 'LSP Definitions / references / ... (Trouble)',
     },
     {
       '<leader>tl',
-      '<cmd>Trouble loclist toggle<cr>',
+      '<cmd>Trouble loclist toggle focus=true<cr>',
       desc = 'Location List (Trouble)',
     },
     {
       '<leader>tq',
-      '<cmd>Trouble qflist toggle<cr>',
+      '<cmd>Trouble qflist toggle focus=true<cr>',
       desc = 'Quickfix List (Trouble)',
     },
   },
