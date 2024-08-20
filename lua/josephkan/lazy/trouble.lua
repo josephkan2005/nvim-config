@@ -11,11 +11,6 @@ return {
       desc = 'Diagnostics (Trouble)',
     },
     {
-      '<leader>tE',
-      '<cmd>Trouble diagnostics toggle focus=true filter={severity=vim.diagnostic.severity.ERROR}<cr>',
-      desc = 'Buffer Diagnostics Trouble',
-    },
-    {
       '<leader>ts',
       '<cmd>Trouble symbols toggle focus=true<cr>',
       desc = 'Symbols (Trouble)',
