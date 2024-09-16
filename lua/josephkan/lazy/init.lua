@@ -4,6 +4,7 @@ return {
   'tpope/vim-fugitive',
   'tpope/vim-repeat',
   'tpope/vim-dadbod',
+  'tpope/vim-eunuch',
   'tpope/vim-unimpaired',
 
   -- NOTE: Plugins can also be added by using a table,
