@@ -22,6 +22,15 @@ return {
         highlight_grey = 'Comment',
       },
     }
+
+    npairs.add_rule(Rule('<', '>', {
+      '-html',
+      '-javascriptreact',
+      '-typescriptreact',
+    }):with_pair(cond.before_regex('%a+:?:?$', 3)):with_move(function(opts)
+      return opts.char == '>'
+    end))
+
     npairs.add_rules {
       Rule('$', '$', { 'tex', 'latex' })
         -- don't add a pair if the next character is %
