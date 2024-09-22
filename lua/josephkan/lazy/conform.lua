@@ -11,8 +11,8 @@ return { -- Autoformat
       c = { 'clang_format' },
       cpp = { 'clang_format' },
       typescript = { 'prettierd' },
-      tsx = { 'prettierd' },
-      jsx = { 'prettierd' },
+      typescriptreact = { 'prettierd' },
+      javascriptreact = { 'prettierd' },
       javascript = { 'prettierd' },
       json = { 'prettierd' },
       -- Conform can also run multiple formatters sequentially
