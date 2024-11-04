@@ -78,7 +78,7 @@ return { -- LSP Configuration & Plugins
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
-        map('<leader>sb', require('telescope.builtin').lsp_document_symbols, '[S]earch [B]uffer Symbols')
+        map('<leader>sc', require('telescope.builtin').lsp_document_symbols, '[S]earch [C]urrent Buffer Symbols')
 
         -- Fuzzy find all the symbols in your current workspace
         --  Similar to document symbols, except searches over your whole project.
