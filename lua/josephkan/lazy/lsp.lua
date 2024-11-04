@@ -163,6 +163,16 @@ return { -- LSP Configuration & Plugins
           lint = { enable = true },
         },
       }, ]]
+      jdtls = {
+        settings = {
+          java = {
+            configuration = {},
+            symbols = {
+              includeSourceMethodDeclarations = true,
+            },
+          },
+        },
+      },
       gopls = {
         settings = {
           env = {
