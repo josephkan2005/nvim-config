@@ -3,7 +3,7 @@ return {
   opts = {
     open_no_results = true,
     win = {
-      size = 0.35,
+      size = 0.4,
     },
   }, -- for default options, refer to the configuration section for custom setup.
   cmd = 'Trouble',
