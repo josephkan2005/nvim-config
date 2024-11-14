@@ -5,13 +5,18 @@ return {
     win = {
       size = 0.4,
     },
-  }, -- for default options, refer to the configuration section for custom setup.
+  },
   cmd = 'Trouble',
   keys = {
     {
       '<leader>te',
       '<cmd>Trouble diagnostics toggle focus=true<cr>',
       desc = 'Diagnostics (Trouble)',
+    },
+    {
+      '<leader>to',
+      '<cmd>Trouble todo toggle focus=true filter = {tag = {TODO,FIX,FIXME}}<cr>',
+      desc = 'Todo (Trouble)',
     },
     {
       '<leader>ts',
