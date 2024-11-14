@@ -12,6 +12,16 @@ for key, value in pairs(tags) do
   numTags = numTags + 1
 end
 
+local todoFilter = function(view, inc)
+  local f = view:get_filter 'tag'
+  local tag = tags[((tagIdx[f and f.filter.tag] or 0) + inc) % numTags]
+  view:filter({ tag = tag }, {
+    id = 'tag',
+    template = '{hl:Title}Filter:{hl} {tag}',
+    del = tag == '',
+  })
+end
+
 return {
   'folke/trouble.nvim',
   opts = {
@@ -26,16 +36,15 @@ return {
         keys = {
           s = {
             action = function(view)
-              print(view.get()['mode'])
-              local f = view:get_filter 'tag'
-              local tag = tags[((tagIdx[f and f.filter.tag] or 0) + 1) % numTags]
-              view:filter({ tag = tag }, {
-                id = 'tag',
-                template = '{hl:Title}Filter:{hl} {tag}',
-                del = tag == '',
-              })
+              todoFilter(view, 1)
             end,
-            desc = 'Toggle Tag Filter',
+            desc = 'Cycle Tag Filter Forward',
+          },
+          S = {
+            action = function(view)
+              todoFilter(view, -1)
+            end,
+            desc = 'Cycle Tag Filter Backward',
           },
         },
       },
