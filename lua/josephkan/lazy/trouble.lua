@@ -22,6 +22,16 @@ local todoFilter = function(view, inc)
   })
 end
 
+local diagnosticsFilter = function(view, inc)
+  local f = view:get_filter 'severity'
+  local severity = ((f and f.filter.severity or 0) + inc) % 5
+  view:filter({ severity = severity }, {
+    id = 'severity',
+    template = '{hl:Title}Filter:{hl} {severity}',
+    del = severity == 0,
+  })
+end
+
 return {
   'folke/trouble.nvim',
   opts = {
@@ -31,6 +41,23 @@ return {
     },
     ---@type table<string, trouble.Mode>
     modes = {
+      diagnostics = {
+        mode = 'diagnostics',
+        keys = {
+          s = {
+            action = function(view)
+              diagnosticsFilter(view, 1)
+            end,
+            desc = 'Cycle Severity Filter Forward',
+          },
+          S = {
+            action = function(view)
+              diagnosticsFilter(view, -1)
+            end,
+            desc = 'Cycle Severity Filter Backward',
+          },
+        },
+      },
       todo = {
         mode = 'todo',
         keys = {
