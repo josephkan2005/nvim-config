@@ -196,7 +196,18 @@ return { -- LSP Configuration & Plugins
                 }
                 vim.api.nvim_set_option_value('filetype', 'rust', { buf = buf })
                 vim.api.nvim_buf_set_lines(buf, 0, -1, true, lines)
-                vim.api.nvim_open_win(buf, true, win_opts)
+                local win = vim.api.nvim_open_win(buf, false, win_opts)
+                local augroup = vim.api.nvim_create_augroup('preview_window_' .. win, {
+                  clear = true,
+                })
+                vim.api.nvim_create_autocmd({ 'CursorMoved', 'BufHidden' }, {
+                  group = augroup,
+                  callback = function()
+                    vim.print 'moved'
+                    vim.api.nvim_win_close(win, true)
+                    vim.api.nvim_clear_autocmds { group = augroup }
+                  end,
+                })
               end
               vim.lsp.buf_request_all(0, 'rust-analyzer/expandMacro', vim.lsp.util.make_position_params(), create_floating_win)
             end,
