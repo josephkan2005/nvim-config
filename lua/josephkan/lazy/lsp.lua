@@ -167,6 +167,42 @@ return { -- LSP Configuration & Plugins
           },
         },
       },
+      rust_analyzer = {
+        commands = {
+          ExpandMacro = {
+            function()
+              local create_floating_win = function(response)
+                if response == nil or response[1] == nil or response[1].result == nil then
+                  return
+                end
+                local num_lines = 0
+                local longest_line = 0
+                local lines = {}
+                for s in string.gmatch(response[1].result.expansion, '[^\r\n]+') do
+                  table.insert(lines, s)
+                  longest_line = math.max(longest_line, string.len(s))
+                  num_lines = num_lines + 1
+                end
+                local buf = vim.api.nvim_create_buf(false, true)
+                local win_opts = {
+                  relative = 'cursor',
+                  width = longest_line + 2,
+                  height = num_lines,
+                  col = 0,
+                  row = 1,
+                  anchor = 'NW',
+                  style = 'minimal',
+                  border = 'solid',
+                }
+                vim.api.nvim_set_option_value('filetype', 'rust', { buf = buf })
+                vim.api.nvim_buf_set_lines(buf, 0, -1, true, lines)
+                vim.api.nvim_open_win(buf, true, win_opts)
+              end
+              vim.lsp.buf_request_all(0, 'rust-analyzer/expandMacro', vim.lsp.util.make_position_params(), create_floating_win)
+            end,
+          },
+        },
+      },
       gopls = {
         settings = {
           env = {
