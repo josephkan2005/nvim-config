@@ -26,7 +26,7 @@ return { -- Highlight, edit, and navigate code
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 
-    vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+    vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead', 'BufEnter' }, {
       pattern = { '*.vert', '*.frag', '*.comp', '*.geom', '*.tese', '*.tesc', '*.vs' },
       command = 'set filetype=glsl',
     })
