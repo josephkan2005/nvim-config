@@ -30,5 +30,10 @@ return { -- Highlight, edit, and navigate code
       pattern = { '*.vert', '*.frag', '*.comp', '*.geom', '*.tese', '*.tesc', '*.vs' },
       command = 'set filetype=glsl',
     })
+
+    vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead', 'BufEnter' }, {
+      pattern = { '.cl' },
+      command = 'set filetype=c',
+    })
   end,
 }
