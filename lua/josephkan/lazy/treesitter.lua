@@ -32,7 +32,7 @@ return { -- Highlight, edit, and navigate code
     })
 
     vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead', 'BufEnter' }, {
-      pattern = { '.cl' },
+      pattern = { '*.cl' },
       command = 'set filetype=c',
     })
   end,
