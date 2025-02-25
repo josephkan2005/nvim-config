@@ -33,7 +33,7 @@ return { -- Highlight, edit, and navigate code
 
     vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead', 'BufEnter' }, {
       pattern = { '*.cl' },
-      command = 'set filetype=c',
+      command = 'set filetype=c shiftwidth=2',
     })
   end,
 }
