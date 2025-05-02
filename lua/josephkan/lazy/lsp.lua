@@ -165,6 +165,12 @@ return { -- LSP Configuration & Plugins
           lint = { enable = true },
         },
       }, ]]
+      verible = {
+        cmd = {
+          'verible-verilog-ls',
+          '--rules_config=.verible-lint-rules',
+        },
+      },
       jdtls = {
         settings = {
           java = {
