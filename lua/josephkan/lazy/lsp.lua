@@ -117,7 +117,7 @@ return { -- LSP Configuration & Plugins
             callback = vim.lsp.buf.clear_references,
           })
         end
-        if client.name == 'typescript-tools' then
+        if client and client.name == 'typescript-tools' then
           local ns = vim.lsp.diagnostic.get_namespace(client.id)
 
           -- vim.diagnostic.disable(nil, ns)
