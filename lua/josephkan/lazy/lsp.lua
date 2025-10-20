@@ -15,7 +15,7 @@ return { -- LSP Configuration & Plugins
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+      group = vim.api.nvim_create_augroup('config-lsp-attach', { clear = true }),
       callback = function(event)
         local map = function(keys, func, desc, modes)
           vim.keymap.set(modes or 'n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
