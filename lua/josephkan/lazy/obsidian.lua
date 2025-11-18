@@ -6,7 +6,7 @@ return {
   ---@type obsidian.config
   opts = {
     legacy_commands = false,
-    ui = { enable = false },
+    ui = { ignore_conceal_warn = true },
     workspaces = {
       {
         name = 'personal',
