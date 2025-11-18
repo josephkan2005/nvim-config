@@ -23,25 +23,19 @@ return { -- LSP Configuration & Plugins
 
         map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
-        map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+        map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
-        map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+        map('gri', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
 
-        map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+        map('grt', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
 
         map('<leader>sc', require('telescope.builtin').lsp_document_symbols, '[S]earch [C]urrent Buffer Symbols')
 
         map('<leader>sp', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[S]earch [P]roject Symbols')
 
-        map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-
-        map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'v' })
-
         map('K', function()
           vim.lsp.buf.hover { border = 'solid' }
         end, 'Hover Documentation')
-
-        map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.

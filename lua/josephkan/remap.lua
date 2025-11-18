@@ -17,9 +17,7 @@ vim.keymap.set('n', '<C-Down>', '<C-w>+')
 vim.keymap.set('n', '<C-Left>', '<C-w><')
 vim.keymap.set('n', '<C-Right>', '<C-w>>')
 
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>er', function()
+vim.keymap.set('n', '<C-w>d', function()
   vim.diagnostic.open_float { border = 'solid' }
 end, { desc = 'Show diagnostic [E]rror messages' })
 
