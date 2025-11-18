@@ -21,13 +21,15 @@ return { -- LSP Configuration & Plugins
           vim.keymap.set(modes or 'n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
-        map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+        map('gd', require('telescope.builtin').lsp_definitions, 'Goto Definition')
 
-        map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+        map('grr', require('telescope.builtin').lsp_references, 'Goto References')
 
-        map('gri', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+        map('gri', require('telescope.builtin').lsp_implementations, 'Goto Implementation')
 
-        map('grt', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+        map('grt', require('telescope.builtin').lsp_type_definitions, 'Type Definition')
+
+        map('grd', vim.lsp.buf.declaration, 'Goto Declaration')
 
         map('<leader>sc', require('telescope.builtin').lsp_document_symbols, '[S]earch [C]urrent Buffer Symbols')
 
