@@ -75,6 +75,15 @@ return { -- LSP Configuration & Plugins
           lint = { enable = true },
         },
       }, ]]
+      yamlls = {
+        settings = {
+          yaml = {
+            schemas = {
+              kubernetes = '/kube/*.yml',
+            },
+          },
+        },
+      },
       verible = {
         cmd = {
           'verible-verilog-ls',
