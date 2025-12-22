@@ -79,7 +79,7 @@ return { -- LSP Configuration & Plugins
         settings = {
           yaml = {
             schemas = {
-              kubernetes = { '/kube/*.yml', '/kube/*.yaml' },
+              kubernetes = { '/kube/*/*.yml', '/kube/*/*.yaml' },
             },
           },
         },
