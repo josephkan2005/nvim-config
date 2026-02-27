@@ -9,7 +9,6 @@ return {
         { path = 'luvit-meta/library', words = { 'vim%.uv' } },
         'lazy.nvim',
         'trouble.nvim',
-        'lspconfig',
       },
     },
   },

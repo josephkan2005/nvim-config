@@ -64,7 +64,7 @@ return { -- LSP Configuration & Plugins
       end,
     })
 
-    ---@type table<string, lspconfig.Config>
+    ---@type table<string, vim.lsp.Config>
     local servers = {
       --[[ eslint = {
         settings = {
