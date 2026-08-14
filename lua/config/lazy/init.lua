@@ -1,6 +1,5 @@
 return {
   'tpope/vim-fugitive',
-  'tpope/vim-repeat',
   'tpope/vim-eunuch',
 
   -- "gc" to comment visual regions/lines
