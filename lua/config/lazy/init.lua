@@ -1,10 +1,7 @@
 return {
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',
   'tpope/vim-repeat',
-  'tpope/vim-dadbod',
   'tpope/vim-eunuch',
-  'tpope/vim-unimpaired',
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
