@@ -58,17 +58,9 @@ return { -- LSP Configuration & Plugins
       end,
     })
 
-    ---@type table<string, vim.lsp.Config>
-    local servers = {}
-
-    for server_name, server in pairs(servers) do
-      vim.lsp.config(server_name, server)
-      vim.lsp.enable(server_name)
-    end
-
     require('mason').setup()
 
-    local ensure_installed = vim.tbl_keys(servers or {})
+    local ensure_installed = vim.tbl_keys {}
 
     vim.list_extend(ensure_installed, {
       'stylua',
