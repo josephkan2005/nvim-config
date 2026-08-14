@@ -1,1 +1,1 @@
-require 'josephkan'
+require 'config'

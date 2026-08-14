@@ -13,6 +13,6 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
-  spec = 'josephkan.lazy',
+  spec = 'config.lazy',
   change_detection = { notify = false },
 }

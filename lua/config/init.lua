@@ -1,8 +1,8 @@
 require('vim._core.ui2').enable()
 
-require 'josephkan.set'
-require 'josephkan.remap'
-require 'josephkan.lazy_init'
+require 'config.set'
+require 'config.remap'
+require 'config.lazy_init'
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
