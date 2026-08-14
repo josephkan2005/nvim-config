@@ -41,6 +41,7 @@ return {
     },
     ---@type table<string, trouble.Mode>
     modes = {
+      ---@diagnostic disable-next-line: missing-fields
       diagnostics = {
         mode = 'diagnostics',
         keys = {
@@ -58,6 +59,7 @@ return {
           },
         },
       },
+      ---@diagnostic disable-next-line: missing-fields
       todo = {
         mode = 'todo',
         keys = {
