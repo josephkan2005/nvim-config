@@ -1,3 +1,5 @@
+require('vim._core.ui2').enable()
+
 require 'josephkan.set'
 require 'josephkan.remap'
 require 'josephkan.lazy_init'

@@ -20,12 +20,6 @@ return { -- Autoformat
       javascriptreact = { 'prettierd' },
       javascript = { 'prettierd' },
       json = { 'prettierd' },
-      -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
-      --
-      -- You can use a sub-list to tell conform to run *until* a formatter
-      -- is found.
-      -- javascript = { { "prettierd", "prettier" } },
     },
   },
   config = function(_, opts)
