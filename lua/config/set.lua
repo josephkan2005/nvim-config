@@ -1,3 +1,6 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 vim.g.have_nerd_font = true
 
 vim.opt.number = true
@@ -6,6 +9,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 
 vim.opt.clipboard = 'unnamedplus'
+vim.o.virtualedit = 'block'
 
 vim.opt.undofile = true
 
@@ -51,4 +55,17 @@ vim.opt.undodir = os.getenv 'HOME' .. '/.nvim/undodir'
 vim.opt.undofile = true
 
 vim.opt.colorcolumn = '80'
-vim.diagnostic.config { virtual_text = true }
+vim.diagnostic.config {
+  virtual_text = true,
+  float = {
+    border = 'solid',
+  },
+}
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('config-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
