@@ -55,25 +55,11 @@ return { -- LSP Configuration & Plugins
             callback = vim.lsp.buf.clear_references,
           })
         end
-        if client and client.name == 'typescript-tools' then
-          local ns = vim.lsp.diagnostic.get_namespace(client.id)
-
-          -- vim.diagnostic.disable(nil, ns)
-        end
       end,
     })
 
     ---@type table<string, vim.lsp.Config>
     local servers = {}
-
-    require('typescript-tools').setup {
-      settings = {
-        expose_as_code_action = { 'all' },
-        implicitProjectConfiguration = {
-          checkJs = true,
-        },
-      },
-    }
 
     for server_name, server in pairs(servers) do
       vim.lsp.config(server_name, server)
