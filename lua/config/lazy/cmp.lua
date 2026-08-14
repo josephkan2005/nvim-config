@@ -20,6 +20,10 @@ return {
 
     completion = { documentation = { auto_show = true } },
 
+    cmdline = {
+      completion = { menu = { auto_show = false } },
+    },
+
     snippets = { preset = 'luasnip' },
 
     sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
