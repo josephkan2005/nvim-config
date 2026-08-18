@@ -6,7 +6,6 @@ return {
           {
             name = 'JavaSE-25',
             path = '/usr/lib/jvm/java-25-openjdk-amd64',
-            sources = '/usr/lib/jvm/java-25-openjdk-amd64/lib/src.zip',
             default = true,
           },
         },
